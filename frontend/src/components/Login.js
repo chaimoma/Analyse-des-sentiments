@@ -7,7 +7,9 @@ export default function Login() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const API_URL = "http://backend:8000";
+  const API_URL =
+  window.location.hostname === "localhost" ? "http://localhost:8000" : "http://backend:8000";
+
 
   const handleLogin = async (e) => {
     e.preventDefault();

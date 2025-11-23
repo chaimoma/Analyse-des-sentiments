@@ -6,7 +6,9 @@ export default function Sentiment() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const API_URL = "http://backend:8000";
+  const API_URL =
+  window.location.hostname === "localhost" ? "http://localhost:8000" : "http://backend:8000";
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
